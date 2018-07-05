@@ -1,6 +1,8 @@
 import React from "react"
 import {connect} from "react-redux"
 import {Icon,Button} from "antd"
+import action from "../../store/action/index.js"
+import md5 from "blueimp-md5"
 class Register extends React.Component{
     constructor(){
         super()
@@ -16,11 +18,19 @@ class Register extends React.Component{
             <div className="loginMessage">
                 <div className="userName">
                     <Icon type="user"></Icon>
-                    <input type="text" placeholder="邮箱/手机号"/>
+                    <input type="text" placeholder="姓名" ref="name"/>
+                </div>
+                <div className="userName">
+                    <Icon type="mail"></Icon>
+                    <input type="email" placeholder="邮箱" ref="email"/>
+                </div>
+                <div className="userName">
+                    <Icon type="phone"></Icon>
+                    <input type="email" placeholder="电话" ref="phone"/>
                 </div>
                 <div className="userPassword">
                     <Icon type="lock"></Icon>
-                    <input type="password" placeholder="密码"/>
+                    <input type="password" placeholder="密码" ref="password"/>
                     <Icon type="eye-o"></Icon>
                 </div>
             </div>
@@ -30,7 +40,7 @@ class Register extends React.Component{
                     <span>我已阅读并同意</span>
                     <b>乐视用户协议</b>
                 </div>
-                <Button type="primary">注册</Button>
+                <Button type="primary" onClick={this.handleRegister}>注册</Button>
                 <p><Icon type="mail"></Icon>短信验证</p>
             </div>
             <div className="bottom">
@@ -39,5 +49,27 @@ class Register extends React.Component{
             </div>
         </div>
     }
+    handleRegister=async ()=>{
+        let {name,email,phone,password}=this.refs,
+            nameValue=name.value,
+            emailValue=email.value,
+            phoneValue=phone.value,
+            passwordValue=password.value;
+        if(!nameValue || !emailValue ||!phoneValue ||!passwordValue){
+            alert("请输入完整信息");
+            return;
+        }
+            passwordValue=md5(passwordValue);
+        await this.props.register({name:nameValue,password:passwordValue,phone:phoneValue,email:emailValue});
+        name.value=email.value=phone.value=password.value="";
+        if(this.props.isRegister){
+            this.props.keepUserName(nameValue);
+            this.props.history.push("/personal");
+
+        }else{
+            alert("注册失败，请重试！")
+        }
+
+    }
 }
-export default connect()(Register);
+export default connect(state=>({...state.personal}),action.personal)(Register);

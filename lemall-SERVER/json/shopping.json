@@ -363,6 +363,7 @@
     "idlx": "classify",
     "id": 1,
     "name": "X40L",
+
     "smallpic": "https://img3-lemall.letvimg.com/le-cloud/s-cat/resource/img/201712/1514267783940.jpg",
     "bigpic": [
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647453308.jpg"
@@ -372,8 +373,8 @@
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647494894.jpg"
     ,
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647544309.jpg"
+      ],
 
-    ],
     "price": 1699.00,
     "dec": "SDR转HDR|16G大存储|Mstar四核处理器"
   },
@@ -381,6 +382,7 @@
     "idlx": "classify",
     "id": 2,
     "name": "X43L",
+
     "smallpic": "https://img3-lemall.letvimg.com/le-cloud/s-cat/resource/img/201712/1514267837635.jpg",
     "bigpic": [
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647837847.jpg"
@@ -390,8 +392,8 @@
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647579610.jpg"
     ,
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647453308.jpg"
-
     ],
+
     "price": 1899.00,
     "dec": "极色炫彩引擎|16G大存储|Mstar四核处理器"
   },
@@ -399,15 +401,16 @@
     "idlx": "classify",
     "id": 3,
     "name": "X50L",
+
     "smallpic": "https://img3-lemall.letvimg.com/le-cloud/s-cat/resource/img/201712/1514267859738.jpg",
     "bigpic": [
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647955570.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647965595.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647971576.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647975011.jpg"
+     "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647955570.jpg"
+      ,
+ "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647965595.jpg"
+      ,
+    "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647971576.jpg"
+      ,
+ "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647975011.jpg"
     ],
     "price": 2299.00,
     "dec": "HDR高动态范围|Mstar四核处理器|16GB超大存储"
@@ -426,22 +429,26 @@
     ,
       "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647544309.jpg"
     ],
+
     "price": 1699.00,
     "dec": "SDR转HDR|16G大存储|Mstar四核处理器"
   },
   {
     "idlx": "classify",
+
     "id": 5,
+
     "name": "X50 PRO",
     "smallpic": "https://img3-lemall.letvimg.com/le-cloud/s-cat/resource/img/201805/1527143234771.jpg",
     "bigpic": [
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647837847.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647558698.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647579610.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647453308.jpg"
+   "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647837847.jpg"
+      ,
+  "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647558698.jpg"
+      ,
+ "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647579610.jpg"
+      ,
+"https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647453308.jpg"
+
 
     ],
     "price": 1899.00,
@@ -449,17 +456,20 @@
   },
   {
     "idlx": "classify",
+
     "id": 6,
+
     "name": "X65L",
     "smallpic": "https://img3-lemall.letvimg.com/le-cloud/s-cat/resource/img/201712/1514267928002.jpg",
     "bigpic": [
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647955570.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647965595.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647971576.jpg"
-    ,
-      "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647975011.jpg"
+ "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647955570.jpg"
+      ,
+ "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647965595.jpg"
+      ,
+ "https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647971576.jpg"
+      ,
+"https://img0-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513647975011.jpg"
+
 
     ],
     "price": 2299.00,

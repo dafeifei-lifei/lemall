@@ -12,6 +12,8 @@ class Banner extends React.Component {
     componentWillMount() {
         console.log(this.props);
         let {imgData} = this.props;
+        console.log(imgData);
+
         let cloneData = imgData.slice(0);
         cloneData.push(imgData[0]);
         cloneData.unshift(imgData[imgData.length-1]);

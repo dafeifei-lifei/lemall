@@ -55,7 +55,8 @@ class Detail extends React.Component {
             dec=select[parseFloat(queryObj.id)-1].dec;
             price=select[parseFloat(queryObj.id)-1].price
         }
-        console.log(bigpic);
+
+ 
         let size = /(\d)+/g.exec(name)[0];
         return <div className="detailBox">
             {/*回退按钮*/}
@@ -194,12 +195,14 @@ class Detail extends React.Component {
         console.log(obj);
         await this.props.add(obj);
 
+
         let data = this.props.select.find((item)=>{
             return parseFloat(item.id)===parseFloat(obj.id)&&item.idlx===obj.idlx;
         })
         this.props.classify_cart(data);
 
         console.log(this.props);
+
 
 
         this.alertBox.classList.add("alertBox");

@@ -94,6 +94,8 @@ route.get('/info', (req, res) => {
 
 route.get('/out', (req, res) => {
     //=>退出登录就是干掉SESSION
+    console.log(req.session.personID);
+
     req.session.personID = null;
     res.send({code: 0, msg: 'OK!'});
 });
