@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>乐视商城_乐视超级手机,超级电视,乐视网会员官方销售平台-乐视商城</title>
+  </head>
+  <body>
+  <script>
+      (function anonymous() {
+          function computed() {
+              let HTML = document.documentElement,
+                  winW = HTML.clientWidth,
+                  desW = 750;
+              if (winW >= desW) {
+                  HTML.style.fontSize = "100px";
+              }
+              HTML.style.fontSize = winW / desW * 100 + "px";//=>HTML中单独编写的代码尽量不要出现{}等操作，例如:ES6模板字符串，否则webpack编译失败
+          }
+          computed();
+          window.addEventListener("resize", computed, false);
+      })()
+  </script>
+    <div id="root"></div>
+  </body>
+</html>
