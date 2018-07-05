@@ -7,7 +7,8 @@ const express = require('express'),
 //=>增加购物车信息
 route.post('/add', (req, res) => {
     console.log(req.session.personID);
-    let personID = req.session.personID,//=>登录用户的ID
+    // let personID = req.session.personID,//=>登录用户的ID
+    let personID =1,
         {id,idlx} = req.body;//=>传递的课程ID，我就是要把这个课程加入购物车
     id = parseFloat(id);
 

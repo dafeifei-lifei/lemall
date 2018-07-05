@@ -11,9 +11,10 @@ let detail={
         }
     }*/
     async add(payload){
+        console.log(payload);
         return{
             type:TYPES.DETAIL_ADD,
-            payload:await add(payload)
+            result:await add(payload)
         }
     }
 };

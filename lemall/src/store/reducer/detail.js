@@ -2,7 +2,7 @@ import * as TYPES from "./../action-types.js"
 
 
 let INIT_STATE={
-    addBack:0//=>记录加入购物车是否成功
+    addBack:1//=>记录加入购物车是否成功
 };
 function detail(state=INIT_STATE,action) {
     state=JSON.parse(JSON.stringify(state));
