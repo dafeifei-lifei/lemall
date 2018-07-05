@@ -9,6 +9,7 @@ class User extends React.Component {
     }
 
     render() {
+
         return <div className="userBox">
             <div className="person">
                 <div className="pic">

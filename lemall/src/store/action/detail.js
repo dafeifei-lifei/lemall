@@ -15,6 +15,13 @@ let detail={
             type:TYPES.DETAIL_ADD,
             payload:await add(payload)
         }
+    },
+
+    classify_cart(payload){
+        return {
+            type:TYPES.CLASSIFY_CART,
+            data:payload
+        }
     }
 };
 

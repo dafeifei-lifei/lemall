@@ -8,3 +8,6 @@ export const LX_FENLEI="LX_FENLEI";
 
 /*购物车 武杨杨*/
 export const SHOPCART_INFO = "SHOPCART_INFO";
+
+/* 详情页 classify add redux */
+export const CLASSIFY_CART= "CLASSIFY_CART";

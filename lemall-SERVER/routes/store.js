@@ -53,7 +53,7 @@ route.post('/remove', (req, res) => {
 
 route.get('/info', (req, res) => {
     let state = parseFloat(req.query.state) || 0,
-        personID = req.session.personID,
+        personID = 1,
         storeList = [];
     if (personID) {
         //=>登录状态下是从JSON文件中获取：在STORE.JSON中找到所有personID和登录用户相同的(服务器从SESSION中可以获取用户ID的)
@@ -90,12 +90,13 @@ route.get('/info', (req, res) => {
 
 route.post('/pay', (req, res) => {
     //=>把某一个课程的STATE修改为1（改完后也是需要把原始JSON文件替换的）
-    let {storeID} = req.body,
+    let {storeID,idlx} = req.body,
         personID = req.session.personID,
+        // personID=2;
         isUpdate = false;
     if (personID) {
         req.storeDATA = req.storeDATA.map(item => {
-            if (parseFloat(item.id) === parseFloat(storeID) && parseFloat(item.personID) === parseFloat(personID)) {
+            if (parseFloat(item.id) === parseFloat(storeID)&&idlx===item.idlx && parseFloat(item.personID) === parseFloat(personID)) {
                 isUpdate = true;
                 return {...item, state: 1};
             }
@@ -103,6 +104,7 @@ route.post('/pay', (req, res) => {
         });
         if (isUpdate) {
             writeFile(STORE_PATH, req.storeDATA).then(() => {
+
                 res.send({code: 0, msg: 'OK!'});
             }).catch(() => {
                 res.send({code: 1, msg: 'NO!'});
