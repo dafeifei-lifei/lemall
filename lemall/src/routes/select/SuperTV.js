@@ -14,12 +14,9 @@ class Select extends React.Component {
         this.props.selectData();
     }
     render() {
-        console.log(this.props);
         let {fenlei,select} = this.props;
         let data = fenlei;
-
         if(data.length===0)return "";
-
         let obj = [];
         for (let attr in data[0]) {
             obj.push(attr);
