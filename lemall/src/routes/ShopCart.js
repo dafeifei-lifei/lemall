@@ -4,6 +4,7 @@ import {Icon} from "antd"
 import "../static/css/shopCart.less"
 import "../static/css/reset.min.css"
 import action from "../store/action"
+import {payData} from "../api/shopCart";
 
 class ShopCart extends React.Component {
     constructor(props) {
@@ -15,8 +16,10 @@ class ShopCart extends React.Component {
 
     render() {
         console.log(this);
-        let {count} = this.props.shopCart;
-        let {state} = this.props.shopCart;
+        let {count,state,checkAll} = this.props.shopCart;
+        let {Cart} =this.props;
+        console.log(this.props);
+
         return <div className={"shopCartBox"}>
             <div className={"shopHead"}>
                 <Icon type="left" onClick={() => this.props.history.go(-1)}/>
@@ -24,114 +27,43 @@ class ShopCart extends React.Component {
                 <Icon type="form"/>
             </div>
 
-            <div className={"shopBody"}>
-            <div><span>乐视自营</span></div>
-            <div>
-                <div className={"select_check"}>
-                    <input type={"checkbox"} id={"ipt"} checked={!!state} onClick={this.select}/>
-                    <label htmlFor={"ipt"}><Icon type={"check"}/></label>
-                </div>
-                <div>
-                    <a><img
-                        src={"https://img2-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513648027217.jpg"}
-                        alt={""}/></a>
-                    <div className={"shop"}>
-                        <span>X55L超级影视会员</span>
-                        <span>(一个月会员)</span>
-                        <span>X55L 55吋</span>
-                    </div>
-                </div>
-                <div>
-                    <span className={"span1"}>¥{2799.00*count}</span>
-                    <p>
-                        <span onClick={this.minus}><Icon type="minus"/></span>
-                        <span>{count}</span>
-                        <span onClick={this.plus}><Icon type="plus"/></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-            <div className={"shopBody"}>
-                <div><span>乐视自营</span></div>
-                <div>
-                    <div className={"select_check"}>
-                        <input type={"checkbox"} id={"ipt2"}/>
-                        <label htmlFor={"ipt2"}><Icon type={"check"}/></label>
-                    </div>
+            {Cart.map((item,index)=>{
+                let {name,smallpic,price,dec} = item;
+                console.log(smallpic);
+                return <div className={"shopBody"}>
+                    <div><span>乐视自营</span></div>
                     <div>
-                        <a><img
-                            src={"https://img2-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513648027217.jpg"}
-                            alt={""}/></a>
-                        <div className={"shop"}>
-                            <span>X55L超级影视会员</span>
-                            <span>(一个月会员)</span>
-                            <span>X55L 55吋</span>
+                        <div className={"select_check"}>
+                            <input type={"checkbox"} id={"ipt"} checked={!!state} onClick={this.select}/>
+                            <label htmlFor={"ipt"}><Icon type={"check"}/></label>
+                        </div>
+                        <div>
+                            <a><img
+                                src={smallpic}
+                                alt={dec}/></a>
+                            <div className={"shop"}>
+                                <span>{dec}</span>
+                                <span>(一个月会员)</span>
+                                <span>{name} 55吋</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span className={"span1"}>¥{price*count}</span>
+                            <p>
+                                <span onClick={this.minus}><Icon type="minus"/></span>
+                                <span>{count}</span>
+                                <span onClick={this.plus}><Icon type="plus"/></span>
+                            </p>
                         </div>
                     </div>
-                    <div>
-                        <span className={"span1"}>¥2799.00</span>
-                        <p>
-                            <span><Icon type="minus"/></span>
-                            <span>1</span>
-                            <span><Icon type="plus"/></span>
-                        </p>
-                    </div>
                 </div>
-            </div>
+            })}
 
-            <div className={"shopBody"}>
-                <div><span>乐视自营</span></div>
-                <div>
-                    <div className={"select_check"}>
-                        <input type={"checkbox"} id={"ipt3"}/>
-                        <label htmlFor={"ipt3"}><Icon type={"check"}/></label>
-                    </div>
-                    <div>
-                        <a><img
-                            src={"https://img2-lemall.letvimg.com/le-cloud/s-pc-oa/resource/img/201712/1513648027217.jpg"}
-                            alt={""}/></a>
-                        <div className={"shop"}>
-                            <span>X55L超级影视会员</span>
-                            <span>(一个月会员)</span>
-                            <span>X55L 55吋</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span className={"span1"}>¥2799.00</span>
-                        <p>
-                            <span><Icon type="minus"/></span>
-                            <span>1</span>
-                            <span><Icon type="plus"/></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-            {/*<div className={"shopFooter"}>
-                <div className="shopFooter_left">
-                    <input type={"checkbox"} id={"ipt1"}/>
-                    <label htmlFor={"ipt1"}><Icon type={"check"}/></label>
-                    <span>全选</span>
-                </div>
-                <div className="shopFooter_mid">
-                    <div>
-                        <span>商品总额</span>
-                        <span>¥ 0.00</span>
-                    </div>
-                    <div>
-                        <span>已优惠</span>
-                        <em>¥ 0.00</em>
-                        <i>不含运费</i>
-                    </div>
-                </div>
-                <div className="shopFooter_right">
-                    <a href="#">去结算</a>
-                </div>
-            </div>*/}
+
             <div className={"shopFooter"}>
                  <div className="shopFooter-left">
-                     <input type={"checkbox"} id={"iptAll"}/>
+                     <input type={"checkbox"} id={"iptAll"} checked={checkAll}/>
                      <label htmlFor={"iptAll"}><Icon type={"check"}/></label>
                      <span>全选</span>
                  </div>
@@ -147,7 +79,7 @@ class ShopCart extends React.Component {
                     </h4>
                 </div>
                 <div className="shopFooter-right">
-                    <a href="#">去结算</a>
+                    <a href="javascript:;" onClick={this.pay}>去结算</a>
                 </div>
             </div>
 
@@ -183,8 +115,19 @@ class ShopCart extends React.Component {
         this.props.shopCartCount(count,tongbuState);
     }
 
+    pay=async ()=>{
+        let result = await payData({idlx:"classify",storeID:2});
+        if(result.code===0){
+            alert("支付成功");
+        }
+        window.location.href = "#/home";
+    }
+
 
 
 }
 
-export default connect(state=>state.shopCart,action.shopCart)(ShopCart);
+export default connect(state=>({
+    ...state.shopCart,
+    ...state.detail
+}),action.shopCart)(ShopCart);

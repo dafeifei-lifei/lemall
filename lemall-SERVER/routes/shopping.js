@@ -1,14 +1,10 @@
 const express = require('express'),
     route = express.Router();
-console.log(1);
 //首页数据
 route.get('/home', (req, res) => {
-    console.log(1);
     let {idlx}=req.query;
-    console.log(idlx);
     let data = req.shoppingDATA.filter(item=>idlx===item.idlx);
     if(data.length!==0){
-        console.log("ok");
         res.send({
             code: 0,
             msg: 'OK',

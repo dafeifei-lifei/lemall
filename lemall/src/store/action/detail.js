@@ -11,9 +11,17 @@ let detail={
         }
     }*/
     async add(payload){
+        console.log(payload);
         return{
             type:TYPES.DETAIL_ADD,
-            payload:await add(payload)
+            result:await add(payload)
+        }
+    },
+
+    classify_cart(payload){
+        return {
+            type:TYPES.CLASSIFY_CART,
+            data:payload
         }
     }
 };
